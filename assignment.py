@@ -11,6 +11,8 @@ try:
 
     cursor = connection.cursor()
 
+#Q1. Connect Database and Create tables(Doctor, Patient, Appointment, Doctor Specialization)
+
     # create_query = '''
     #      CREATE TABLE IF NOT EXISTS Doctor (
     #         id INT PRIMARY KEY,
@@ -44,6 +46,8 @@ try:
     # cursor.execute(create_query)
     # connection.commit()
 
+#Insert the given data into the Tables    
+    
     # insert_query = '''
     #     INSERT INTO Doctor Values(1 ,'Lionel Smart', 1 ,2811232323 )
     #     INSERT INTO Doctor Values(2 ,'Michelle Sanders', 2 ,1899912310 )
@@ -153,20 +157,19 @@ try:
     # print(cursor.rowcount)
     # connection.commit()
 
-except Exception as e:
-    print("Error occured", e)
 
-finally:
-    cursor.close()
-    connection.close()
 
+#Q.3. GET the count of patients born after 1990
+    
     # select query ='''
     #     SELECT * FROM Patients
-    #     WHERE date_of_birth > 1990
+    #     WHERE date_of_birth > 1990-01-01
     # '''
     # cursor.execute(select_query)
     # print(cursor.fetchmany())
     # print(cursor.fetchone())
+    
+#Q.4 GET the appointments made with “Surgeon” specialized doctors.    
 
     # select query ='''
     #     SELECT *
@@ -176,3 +179,9 @@ finally:
     # paint(cursor.fetchmany())
     # print(cursor.fetchone())
 
+except Exception as e:
+    print("Error occured", e)
+
+finally:
+    cursor.close()
+    connection.close()
